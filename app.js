@@ -1,27 +1,29 @@
 const board = document.getElementById('board');
 const noteMaker = document.getElementById('noteMaker');
 const post = document.getElementById('post');
-let deleteNote = '';
+
 let noteCounter = 0;
+
+board.addEventListener('click', (event) => {
+    if (event.target.classList.contains('deleteNote')) {
+        const thisNote = event.target.closest('.postedNote');
+        console.log(thisNote);
+        thisNote.remove();
+        console.log('deleted');
+    }
+});
 
 post.onclick = () => {
     console.log('posted');
     board.insertAdjacentHTML('beforeend', `
         <section class='postedNote'>
-            <textarea name="postedNote" cols="20" rows="10">${noteMaker.value}</textarea>
-            <button id='deleteNote'>Delete</button>
+            <textarea class='postedNote' name="postedNote" cols="20" rows="10">${noteMaker.value}</textarea>
+            <button class='deleteNote'>Delete</button>
         </section>`
     )
-    deleteNote = document.getElementById('deleteNote');
-    console.log(deleteNote);
+    const deleteNotes = document.querySelectorAll('deleteNote');
+    console.log(deleteNotes);
     console.log(post);
     
-    deleteNote.onclick = () => {
-        const thisNote = document.querySelector('[name = "postedNote"]');
-        console.log(thisNote);
-        thisNote.parentElement.remove();
-        console.log('deleted');
-
-    }
 };
 
