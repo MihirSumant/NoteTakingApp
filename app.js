@@ -18,7 +18,7 @@ post.onclick = () => {
     board.insertAdjacentHTML('beforeend', `
         <section class='postedNote'>
             <textarea class='postedNote' name="postedNote" cols="20" rows="10">${noteMaker.value}</textarea>
-            <button class='deleteNote'>Delete</button>
+            <button class='deleteNote'>X</button>
         </section>`
     )
     const deleteNotes = document.querySelectorAll('deleteNote');
