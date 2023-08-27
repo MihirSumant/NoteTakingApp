@@ -1,7 +1,7 @@
 * {
     background-color: rgb(70, 159, 174);
-    margin-left: 20px;
-    margin-top: 10px;
+    margin: 10px;
+    padding: auto;
 }
 
 #newNote {
@@ -9,4 +9,15 @@
     border: 1px;
     border-color:rgb(51, 146, 146);
     border-style:solid;
+}
+
+.postedNote {
+    padding: 2px;
+    background-color: rgb(221, 190, 37);
+}
+
+.deleteNote {
+    text-decoration: solid;
+    padding: 5px;
+    background-color: rgb(221, 190, 37);
 }
